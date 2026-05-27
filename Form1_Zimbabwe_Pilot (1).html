@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zimbabwe Minerals Supply Chain — Pilot Questionnaire</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f1f3f4;font-family:Roboto,"Google Sans",Arial,sans-serif;color:#202124;font-size:14px;padding-bottom:60px}
+
+  /* Form container */
+  .form-wrap{max-width:640px;margin:0 auto;padding:0 12px 40px}
+
+  /* Top accent bar */
+  .top-bar{height:10px;background:#1D9E75;border-radius:8px 8px 0 0}
+
+  /* Cards */
+  .card{background:#fff;border-radius:0 0 4px 4px;box-shadow:0 1px 2px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.08);margin-bottom:14px;overflow:hidden}
+  .card+.card{border-radius:4px}
+  .card-pad{padding:20px 24px}
+
+  /* Title card */
+  .title-card{border-top:10px solid #1D9E75}
+  .title-card h1{font-size:28px;font-weight:400;color:#202124;margin-bottom:8px}
+  .title-card .desc{font-size:14px;color:#5f6368;line-height:1.6;margin-bottom:12px}
+  .title-card .req-note{font-size:12px;color:#5f6368;border-top:1px solid #e0e0e0;padding-top:10px}
+  .title-card .req-note span{color:#d93025}
+
+  /* Section headers */
+  .sec-header{background:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.1);margin-bottom:14px;padding:16px 24px;border-left:4px solid #1D9E75}
+  .sec-header h2{font-size:16px;font-weight:500;color:#202124;margin-bottom:4px}
+  .sec-header p{font-size:13px;color:#5f6368}
+
+  /* Sub-section label */
+  .subsec-label{font-size:13px;font-weight:500;color:#1D9E75;padding:14px 24px 4px;border-bottom:1px solid #e8f5e9;margin-bottom:4px}
+
+  /* Scale bar */
+  .scale-bar{background:#f8f9fa;padding:8px 24px;font-size:11px;color:#5f6368;border-bottom:1px solid #f1f3f4;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .scale-bar strong{color:#202124}
+
+  /* Question block */
+  .q-block{padding:16px 24px;border-bottom:1px solid #f1f3f4}
+  .q-block:last-child{border-bottom:none}
+  .q-label{font-size:14px;color:#202124;line-height:1.55;margin-bottom:14px}
+  .q-code-inline{font-size:12px;color:#1D9E75;font-weight:500;margin-right:6px}
+  .req{color:#d93025}
+
+  /* Rating */
+  .rating-row{display:flex;align-items:flex-end;gap:4px;flex-wrap:wrap}
+  .r-col{display:flex;flex-direction:column;align-items:center;gap:4px}
+  .r-col-label{font-size:10px;color:#5f6368;text-align:center;max-width:52px;line-height:1.2}
+  .r-opt{cursor:pointer}
+  .r-opt input{display:none}
+  .r-circle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1.5px solid #dadce0;font-size:13px;font-weight:500;color:#5f6368;background:#fff;transition:all .15s}
+  .r-opt:hover .r-circle{border-color:#1D9E75;color:#1D9E75}
+  .r-opt input:checked+.r-circle{background:#1D9E75;border-color:#1D9E75;color:#fff}
+  .na .r-circle{width:44px;border-radius:20px;font-size:11px;font-weight:500}
+  .r-opt.na-opt input:checked+.r-circle{background:#78909c;border-color:#546e7a;color:#fff}
+
+  .err-msg{font-size:11px;color:#d93025;margin-top:6px;display:none}
+  .q-block.error .err-msg{display:block}
+  .q-block.error .r-circle{border-color:#d93025}
+
+  /* Profile inputs */
+  .field-label{font-size:14px;color:#202124;margin-bottom:10px;display:block}
+  .radio-opt,.check-opt{display:flex;align-items:center;gap:10px;padding:7px 4px;font-size:14px;color:#202124;cursor:pointer;border-radius:4px}
+  .radio-opt:hover,.check-opt:hover{background:#f8f9fa}
+  .radio-opt input,.check-opt input{accent-color:#1D9E75;width:16px;height:16px;cursor:pointer}
+  .text-input{width:100%;border:none;border-bottom:1px solid #dadce0;padding:6px 0;font-size:14px;color:#202124;background:transparent;margin-top:4px;outline:none}
+  .text-input:focus{border-bottom-color:#1D9E75}
+
+  /* Comment / feedback textarea */
+  .comment-block{padding:16px 24px 20px}
+  .comment-block label{font-size:14px;color:#202124;display:block;margin-bottom:8px}
+  .comment-block textarea{width:100%;border:none;border-bottom:1px solid #dadce0;padding:6px 0;font-size:14px;font-family:inherit;resize:none;min-height:56px;background:transparent;color:#202124;outline:none}
+  .comment-block textarea:focus{border-bottom-color:#1D9E75}
+
+  /* Submit */
+  .submit-row{display:flex;align-items:center;gap:20px;padding:8px 0}
+  .btn-submit{background:#1D9E75;color:#fff;border:none;padding:10px 28px;border-radius:4px;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s}
+  .btn-submit:hover{background:#168a64}
+  .btn-clear{background:none;border:none;font-size:13px;color:#5f6368;cursor:pointer;padding:8px}
+  .btn-clear:hover{color:#202124}
+
+  /* Thank you */
+  #thankyou{display:none}
+  .ty-card{background:#fff;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.1);padding:40px 32px;text-align:center;border-top:10px solid #1D9E75}
+  .ty-icon{font-size:48px;margin-bottom:16px}
+  .ty-card h2{font-size:22px;font-weight:400;color:#202124;margin-bottom:10px}
+  .ty-card p{font-size:14px;color:#5f6368;line-height:1.6}
+
+  @media(max-width:520px){
+    .r-circle{width:34px;height:34px;font-size:12px}
+    .na .r-circle{width:38px;font-size:10px}
+    .r-col-label{font-size:9px;max-width:40px}
+  }
+
+  /* Section G risk matrix */
+  .risk-table-wrap{overflow-x:auto;padding:0 24px 20px}
+  .risk-table{width:100%;border-collapse:collapse;font-size:13px}
+  .risk-table th{background:#1D3557;color:#fff;font-weight:500;padding:10px 8px;text-align:center;font-size:12px;white-space:nowrap}
+  .risk-table th.risk-col{text-align:left;min-width:200px}
+  .risk-table td{padding:8px 6px;border-bottom:1px solid #f1f3f4;vertical-align:middle}
+  .risk-table tr:nth-child(even) td{background:#f8f9fa}
+  .risk-table tr:hover td{background:#e8f5e9}
+  .risk-num{font-weight:600;color:#1D9E75;text-align:center;width:28px}
+  .risk-name{font-size:13px;color:#202124;line-height:1.4}
+  .risk-col-head{text-align:center}
+
+  /* Mini rating for table cells */
+  .mini-rating{display:flex;gap:3px;justify-content:center;flex-wrap:nowrap}
+  .mini-r{cursor:pointer}
+  .mini-r input{display:none}
+  .mini-circle{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid #dadce0;font-size:11px;font-weight:500;color:#5f6368;background:#fff;transition:all .12s}
+  .mini-r:hover .mini-circle{border-color:#1D9E75;color:#1D9E75}
+  .mini-r input:checked+.mini-circle{color:#fff}
+  .impact-sel input:checked+.mini-circle{background:#C00000;border-color:#C00000}
+  .prob-sel input:checked+.mini-circle{background:#BF8F00;border-color:#BF8F00}
+  .ctrl-sel input:checked+.mini-circle{background:#1D9E75;border-color:#1D9E75}
+
+  /* Trend select */
+  .trend-sel{border:1.5px solid #dadce0;border-radius:4px;padding:5px 6px;font-size:13px;color:#202124;background:#fff;cursor:pointer;width:70px}
+  .trend-sel:focus{outline:none;border-color:#1D9E75}
+
+  /* Text action field */
+  .action-input{border:none;border-bottom:1.5px solid #dadce0;font-size:12px;font-family:inherit;color:#202124;padding:4px 2px;width:100%;min-width:100px;background:transparent}
+  .action-input:focus{outline:none;border-bottom-color:#1D9E75}
+
+  .scale-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:#5f6368;padding:10px 24px 4px;border-bottom:1px solid #f1f3f4}
+  .scale-legend strong{color:#202124}
+  .leg-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
+
+</style>
+</head>
+<body>
+<div class="form-wrap">
+
+<!-- TITLE CARD -->
+<div class="top-bar"></div>
+<div class="card title-card">
+  <div class="card-pad">
+    <h1>Zimbabwe Minerals Supply Chain Risk Assessment</h1>
+    <p class="desc">This questionnaire explores supply chain risk conditions across Zimbabwe's mineral export corridors. Your responses are anonymous and used solely for academic research. Please answer each question as honestly and accurately as possible based on your direct experience and knowledge.</p>
+    <p class="req-note"><span>*</span> Required question</p>
+  </div>
+</div>
+
+<form id="form" novalidate>
+
+<div class="sec-header">
+  <h2>Section A — Respondent Profile</h2>
+  <p>Please complete your profile before starting the questionnaire.</p>
+</div>
+<div class="card">
+  <div class="card-pad">
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">A1. Select the stakeholder group that best fits your primary role. <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="A1" value="Government official — ministry, national or regulatory body"> Government official — ministry, national or regulatory body</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Government official — parastatal or state-owned enterprise"> Government official — parastatal or state-owned enterprise</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Mining company — large scale (annual turnover > USD 10 million)"> Mining company — large scale (annual turnover > USD 10 million)</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Mining company — small scale or artisanal"> Mining company — small scale or artisanal</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Logistics or freight operator"> Logistics or freight operator</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Civil society or community organisation"> Civil society or community organisation</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="International buyer, commodity trader or refinery"> International buyer, commodity trader or refinery</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Academic or research institution"> Academic or research institution</label>
+      <label class="radio-opt"><input type="radio" name="A1" value="Other"> Other</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">A2. Which mineral sector(s) does your work involve? (Select all that apply) <span class="req">*</span></span>
+      <label class="check-opt"><input type="checkbox" name="A2" value="Lithium"> Lithium</label>
+      <label class="check-opt"><input type="checkbox" name="A2" value="Platinum Group Metals"> Platinum Group Metals</label>
+      <label class="check-opt"><input type="checkbox" name="A2" value="Chrome"> Chrome</label>
+      <label class="check-opt"><input type="checkbox" name="A2" value="Multiple minerals"> Multiple minerals</label>
+      <label class="check-opt"><input type="checkbox" name="A2" value="I work across the corridor generally (logistics, policy, etc.)"> I work across the corridor generally (logistics, policy, etc.)</label>
+      <label class="check-opt"><input type="checkbox" name="A2" value="Other"> Other</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">A3. Which export corridor(s) does your work primarily involve? <span class="req">*</span></span>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Beira Corridor (Zimbabwe – Mozambique – Port of Beira)"> Beira Corridor (Zimbabwe – Mozambique – Port of Beira)</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Durban/Richards Bay Corridor (Zimbabwe – South Africa)"> Durban/Richards Bay Corridor (Zimbabwe – South Africa)</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Maputo Corridor (Zimbabwe – Mozambique – Port of Maputo)"> Maputo Corridor (Zimbabwe – Mozambique – Port of Maputo)</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Domestic corridors (internal mine to market)"> Domestic corridors (internal mine to market)</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Other corridors"> Other corridors</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="Neither — my work is primarily mine/processing site focused"> Neither — my work is primarily mine/processing site focused</label>
+      <label class="check-opt"><input type="checkbox" name="A3" value="I am not sure"> I am not sure</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">A4. Years of experience in Zimbabwe's minerals supply chain? <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="A4" value="Less than 2 years"> Less than 2 years</label>
+      <label class="radio-opt"><input type="radio" name="A4" value="2 to 5 years"> 2 to 5 years</label>
+      <label class="radio-opt"><input type="radio" name="A4" value="6 to 10 years"> 6 to 10 years</label>
+      <label class="radio-opt"><input type="radio" name="A4" value="11 to 20 years"> 11 to 20 years</label>
+      <label class="radio-opt"><input type="radio" name="A4" value="More than 20 years"> More than 20 years</label>
+    </div>
+
+    <div>
+      <span class="field-label">A5. At what geographic level does your organisation primarily operate? <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="A5" value="Mine site / operational level"> Mine site / operational level</label>
+      <label class="radio-opt"><input type="radio" name="A5" value="Provincial level"> Provincial level</label>
+      <label class="radio-opt"><input type="radio" name="A5" value="National level"> National level</label>
+      <label class="radio-opt"><input type="radio" name="A5" value="Regional (SADC) level"> Regional (SADC) level</label>
+      <label class="radio-opt"><input type="radio" name="A5" value="International level"> International level</label>
+      <label class="radio-opt"><input type="radio" name="A5" value="Multiple levels"> Multiple levels</label>
+    </div>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Section B — VSM System 1: Operations</h2>
+  <p>Rate the degree to which the following conditions apply to mining supply chain operations in your corridor.</p>
+</div>
+<div class="card">
+  <div class="subsec-label">B1. Operational Capacity and Stability</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="B1.1">
+    <p class="q-label"><span class="q-code-inline">B1.1</span>Mining extraction operations in your corridor maintain consistent output volumes despite operations-related failures. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B1.2">
+    <p class="q-label"><span class="q-code-inline">B1.2</span>Processing inefficiencies are effectively controlled within acceptable industry benchmarks. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B1.3">
+    <p class="q-label"><span class="q-code-inline">B1.3</span>Mine operations inputs supply chains are reliable and do not cause significant operational stoppages. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B1.5">
+    <p class="q-label"><span class="q-code-inline">B1.5</span>Energy supply is reliable to maintain uninterrupted operations. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B1.6">
+    <p class="q-label"><span class="q-code-inline">B1.6</span>Transport infrastructure along your corridor supports timely and cost-effective mineral product movement. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.6" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.6" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.6" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.6" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.6" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.6" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B1.7">
+    <p class="q-label"><span class="q-code-inline">B1.7</span>Your organisation can respond to sudden operational disruptions within an acceptable timeframe. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B1.7" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B1.7" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B1.7" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B1.7" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B1.7" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B1.7" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_B1_Operational_Capacity_and_Stability">Comments on B1. Operational Capacity and Stability (optional)</label>
+    <textarea id="cmt_B1_Operational_Capacity_and_Stability" name="cmt_B1_Operational_Capacity_and_Stability" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">B2. Workforce and Technical Skills</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="B2.1">
+    <p class="q-label"><span class="q-code-inline">B2.1</span>The mining workforce in your corridor has adequate technical skills for current production requirements. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B2.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B2.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B2.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B2.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B2.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B2.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B2.5">
+    <p class="q-label"><span class="q-code-inline">B2.5</span>Training programmes adequately address emerging skill gaps (digital mining, automation, metallurgical engineering). <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B2.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B2.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B2.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B2.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B2.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B2.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_B2_Workforce_and_Technical_Skills">Comments on B2. Workforce and Technical Skills (optional)</label>
+    <textarea id="cmt_B2_Workforce_and_Technical_Skills" name="cmt_B2_Workforce_and_Technical_Skills" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">B3. ESG, Environmental Compliance, and Community Relations</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="B3.1">
+    <p class="q-label"><span class="q-code-inline">B3.1</span>Mining operations comply with environmental standards. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B3.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B3.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B3.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B3.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B3.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B3.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="B3.2">
+    <p class="q-label"><span class="q-code-inline">B3.2</span>Community relations (social licence to operate) are actively managed and do not pose risk to operational continuity. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="B3.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="B3.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="B3.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="B3.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="B3.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="B3.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_B3_ESG,_Environmental_Compliance,_and_Community_Relations">Comments on B3. ESG, Environmental Compliance, and Community Relations (optional)</label>
+    <textarea id="cmt_B3_ESG,_Environmental_Compliance,_and_Community_Relations" name="cmt_B3_ESG,_Environmental_Compliance,_and_Community_Relations" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Section C — VSM System 2: Coordination</h2>
+  <p>Rate the effectiveness of coordination mechanisms across your mining corridor.</p>
+</div>
+<div class="card">
+  <div class="subsec-label">C1. Information and Market Coordination</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="C1.1">
+    <p class="q-label"><span class="q-code-inline">C1.1</span>Reliable, timely commodity price information is accessible to mining stakeholders across the corridor. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C1.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C1.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C1.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C1.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C1.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C1.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C1.3">
+    <p class="q-label"><span class="q-code-inline">C1.3</span>Information infrastructure is used to effectively coordinate supply chain metrics between actors. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C1.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C1.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C1.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C1.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C1.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C1.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C1.4">
+    <p class="q-label"><span class="q-code-inline">C1.4</span>Production scheduling and logistics are effectively synchronised across mining supply chain actors. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C1.4" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C1.4" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C1.4" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C1.4" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C1.4" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C1.4" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C1.6">
+    <p class="q-label"><span class="q-code-inline">C1.6</span>Cross-border coordination mechanisms function effectively to reduce export delays and losses. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C1.6" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C1.6" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C1.6" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C1.6" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C1.6" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C1.6" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_C1_Information_and_Market_Coordination">Comments on C1. Information and Market Coordination (optional)</label>
+    <textarea id="cmt_C1_Information_and_Market_Coordination" name="cmt_C1_Information_and_Market_Coordination" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">C2. Digital Technology and Cyber Risk</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="C2.1">
+    <p class="q-label"><span class="q-code-inline">C2.1</span>Digital traceability tools (blockchain, ERP, mobile platforms) are in use and effective in your corridor. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C2.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C2.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C2.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C2.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C2.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C2.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C2.3">
+    <p class="q-label"><span class="q-code-inline">C2.3</span>Your organisation has cybersecurity protocols to protect the digital mining supply chain ecosystem. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C2.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C2.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C2.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C2.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C2.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C2.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_C2_Digital_Technology_and_Cyber_Risk">Comments on C2. Digital Technology and Cyber Risk (optional)</label>
+    <textarea id="cmt_C2_Digital_Technology_and_Cyber_Risk" name="cmt_C2_Digital_Technology_and_Cyber_Risk" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">C3. Regulatory and Standards Coordination</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="C3.1">
+    <p class="q-label"><span class="q-code-inline">C3.1</span>Regulatory requirements do not create unpredictable compliance burdens. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C3.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C3.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C3.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C3.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C3.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C3.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C3.2">
+    <p class="q-label"><span class="q-code-inline">C3.2</span>Regulatory authorities do not create conflicting requirements that disrupt coordination. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C3.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C3.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C3.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C3.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C3.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C3.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="C3.3">
+    <p class="q-label"><span class="q-code-inline">C3.3</span>Customs processes at key corridor points are efficient and predictable for mineral exports. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="C3.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="C3.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="C3.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="C3.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="C3.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="C3.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_C3_Regulatory_and_Standards_Coordination">Comments on C3. Regulatory and Standards Coordination (optional)</label>
+    <textarea id="cmt_C3_Regulatory_and_Standards_Coordination" name="cmt_C3_Regulatory_and_Standards_Coordination" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Section D — VSM System 3: Control</h2>
+  <p>Rate the effectiveness of control and performance management systems in your corridor.</p>
+</div>
+<div class="card">
+  <div class="subsec-label">D1. Capital, Finance, and Investment</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="D1.1">
+    <p class="q-label"><span class="q-code-inline">D1.1</span>Access to affordable finance is adequate for mining supply chain actors to operate at full capacity. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D1.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D1.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D1.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D1.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D1.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D1.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D1.2">
+    <p class="q-label"><span class="q-code-inline">D1.2</span>Foreign direct investment into your mining corridor is perceived as sufficiently secure. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D1.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D1.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D1.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D1.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D1.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D1.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D1.5">
+    <p class="q-label"><span class="q-code-inline">D1.5</span>Foreign currency risk does not significantly impair mining supply chain operations. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D1.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D1.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D1.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D1.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D1.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D1.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D1.6">
+    <p class="q-label"><span class="q-code-inline">D1.6</span>Resource nationalism requirements are implemented in a manner that maintains operation continuity. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D1.6" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D1.6" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D1.6" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D1.6" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D1.6" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D1.6" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_D1_Capital,_Finance,_and_Investment">Comments on D1. Capital, Finance, and Investment (optional)</label>
+    <textarea id="cmt_D1_Capital,_Finance,_and_Investment" name="cmt_D1_Capital,_Finance,_and_Investment" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">D2. Performance Monitoring and Internal Control</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="D2.1">
+    <p class="q-label"><span class="q-code-inline">D2.1</span>Your organisation uses formal KPIs to monitor mining supply chain performance across operational units. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D2.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D2.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D2.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D2.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D2.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D2.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D2.2">
+    <p class="q-label"><span class="q-code-inline">D2.2</span>Internal audit and compliance functions effectively identify and address performance deviations. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D2.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D2.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D2.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D2.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D2.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D2.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D2.3">
+    <p class="q-label"><span class="q-code-inline">D2.3</span>Vendor accountability is regularly assessed to address under-performance in a structured manner. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D2.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D2.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D2.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D2.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D2.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D2.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D2.4">
+    <p class="q-label"><span class="q-code-inline">D2.4</span>Mining supply chain risk management frameworks are formally maintained. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D2.4" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D2.4" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D2.4" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D2.4" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D2.4" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D2.4" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D2.5">
+    <p class="q-label"><span class="q-code-inline">D2.5</span>Concentration risk (over-reliance on single buyer, smelter, port, or export route) is monitored and mitigated. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D2.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D2.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D2.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D2.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D2.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D2.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_D2_Performance_Monitoring_and_Internal_Control">Comments on D2. Performance Monitoring and Internal Control (optional)</label>
+    <textarea id="cmt_D2_Performance_Monitoring_and_Internal_Control" name="cmt_D2_Performance_Monitoring_and_Internal_Control" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">D3. Early Warning and Alert Systems</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="D3.1">
+    <p class="q-label"><span class="q-code-inline">D3.1</span>Early warning systems exist that alert leadership to imminent mining supply chain disruptions. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D3.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D3.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D3.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D3.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D3.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D3.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="D3.2">
+    <p class="q-label"><span class="q-code-inline">D3.2</span>Rapid response protocols are activated quickly when crisis thresholds are crossed. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="D3.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="D3.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="D3.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="D3.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="D3.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="D3.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_D3_Early_Warning_and_Alert_Systems">Comments on D3. Early Warning and Alert Systems (optional)</label>
+    <textarea id="cmt_D3_Early_Warning_and_Alert_Systems" name="cmt_D3_Early_Warning_and_Alert_Systems" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Section E — VSM System 4: Intelligence</h2>
+  <p>Rate how effectively your organisation scans and acts on external environmental intelligence.</p>
+</div>
+<div class="card">
+  <div class="subsec-label">E1. Climate and Environmental Intelligence</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="E1.2">
+    <p class="q-label"><span class="q-code-inline">E1.2</span>Climate adaptation strategies are embedded in long-term mining supply chain planning. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E1.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E1.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E1.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E1.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E1.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E1.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_E1_Climate_and_Environmental_Intelligence">Comments on E1. Climate and Environmental Intelligence (optional)</label>
+    <textarea id="cmt_E1_Climate_and_Environmental_Intelligence" name="cmt_E1_Climate_and_Environmental_Intelligence" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">E2. Commodity Market and Energy Transition Intelligence</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="E2.1">
+    <p class="q-label"><span class="q-code-inline">E2.1</span>Global critical mineral demand trends are systematically factored into supply chain strategy. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E2.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E2.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E2.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E2.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E2.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E2.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E2.2">
+    <p class="q-label"><span class="q-code-inline">E2.2</span>Your organisation monitors buyer market developments (China, EU, USA, India) affecting product requirements. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E2.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E2.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E2.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E2.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E2.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E2.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E2.3">
+    <p class="q-label"><span class="q-code-inline">E2.3</span>Alternative export routes are developed based on corridor dependency risk assessments. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E2.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E2.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E2.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E2.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E2.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E2.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E2.5">
+    <p class="q-label"><span class="q-code-inline">E2.5</span>Demand-side disruptions from the energy transition are modelled in strategic scenarios. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E2.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E2.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E2.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E2.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E2.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E2.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_E2_Commodity_Market_and_Energy_Transition_Intelligence">Comments on E2. Commodity Market and Energy Transition Intelligence (optional)</label>
+    <textarea id="cmt_E2_Commodity_Market_and_Energy_Transition_Intelligence" name="cmt_E2_Commodity_Market_and_Energy_Transition_Intelligence" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">E3. Geopolitical and Trade Intelligence</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="E3.1">
+    <p class="q-label"><span class="q-code-inline">E3.1</span>Geopolitical risks are actively monitored through the mining supply chains. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E3.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E3.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E3.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E3.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E3.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E3.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E3.2">
+    <p class="q-label"><span class="q-code-inline">E3.2</span>Your organisation monitors trade restriction risk on Zimbabwean minerals in key destination markets. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E3.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E3.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E3.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E3.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E3.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E3.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E3.3">
+    <p class="q-label"><span class="q-code-inline">E3.3</span>Risks from illegal mining are assessed in strategic planning. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E3.3" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E3.3" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E3.3" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E3.3" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E3.3" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E3.3" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="E3.4">
+    <p class="q-label"><span class="q-code-inline">E3.4</span>The impact of changing responsible sourcing requirements on Zimbabwe's mineral export access is monitored. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="E3.4" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="E3.4" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="E3.4" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="E3.4" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="E3.4" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="E3.4" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_E3_Geopolitical_and_Trade_Intelligence">Comments on E3. Geopolitical and Trade Intelligence (optional)</label>
+    <textarea id="cmt_E3_Geopolitical_and_Trade_Intelligence" name="cmt_E3_Geopolitical_and_Trade_Intelligence" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Section F — VSM System 5: Policy, Governance and Direction</h2>
+  <p>Rate the coherence and effectiveness of strategic governance across Zimbabwe's mining supply chain.</p>
+</div>
+<div class="card">
+  <div class="subsec-label">F1. Governance and Political Risk</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="F1.1">
+    <p class="q-label"><span class="q-code-inline">F1.1</span>National mining policy in Zimbabwe provides a coherent enabling framework for supply chain operations. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F1.2">
+    <p class="q-label"><span class="q-code-inline">F1.2</span>Political risk does not materially undermine investor confidence in the corridor. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F1.4">
+    <p class="q-label"><span class="q-code-inline">F1.4</span>National data sovereignty of strategic mining supply chain intelligence is maintained by Zimbabwe. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.4" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.4" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.4" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.4" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.4" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.4" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F1.5">
+    <p class="q-label"><span class="q-code-inline">F1.5</span>Parastatal/SOE roles in mining are clearly defined to avoid crowding out private sector participation. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F1.6">
+    <p class="q-label"><span class="q-code-inline">F1.6</span>Beneficial ownership transparency frameworks in the mining sector are effectively enforced. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.6" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.6" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.6" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.6" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.6" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.6" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F1.7">
+    <p class="q-label"><span class="q-code-inline">F1.7</span>Anti-corruption frameworks in the mining sector are effectively enforced. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F1.7" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F1.7" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F1.7" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F1.7" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F1.7" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F1.7" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_F1_Governance_and_Political_Risk">Comments on F1. Governance and Political Risk (optional)</label>
+    <textarea id="cmt_F1_Governance_and_Political_Risk" name="cmt_F1_Governance_and_Political_Risk" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">F2. Strategic Vision and Systemic Coherence</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="F2.1">
+    <p class="q-label"><span class="q-code-inline">F2.1</span>A shared long-term value addition vision is endorsed across sector stakeholders. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F2.2">
+    <p class="q-label"><span class="q-code-inline">F2.2</span>The supply chain has clear strategic priorities balancing economic growth, environmental sustainability, and social equity. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F2.4">
+    <p class="q-label"><span class="q-code-inline">F2.4</span>Zimbabwe's mining supply chain governance is sufficiently autonomous without excessive external dependence. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.4" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.4" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.4" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.4" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.4" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.4" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F2.5">
+    <p class="q-label"><span class="q-code-inline">F2.5</span>Inter-ministerial coordination for Zimbabwe mining supply chains produces coherent corridor policy. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.5" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.5" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.5" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.5" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.5" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.5" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F2.6">
+    <p class="q-label"><span class="q-code-inline">F2.6</span>Zimbabwe's value-addition strategy is coherent. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.6" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.6" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.6" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.6" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.6" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.6" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F2.7">
+    <p class="q-label"><span class="q-code-inline">F2.7</span>Zimbabwe's value-addition strategy is supported by adequate infrastructure. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F2.7" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F2.7" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F2.7" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F2.7" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F2.7" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F2.7" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_F2_Strategic_Vision_and_Systemic_Coherence">Comments on F2. Strategic Vision and Systemic Coherence (optional)</label>
+    <textarea id="cmt_F2_Strategic_Vision_and_Systemic_Coherence" name="cmt_F2_Strategic_Vision_and_Systemic_Coherence" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+<div class="card">
+  <div class="subsec-label">F3. System Self-Renewal and Resilience</div>
+  <div class="scale-bar"><strong>Rating scale:</strong> &nbsp;1 = None/Never &nbsp;|&nbsp; 2 = Weak/Rarely &nbsp;|&nbsp; 3 = Moderate/Sometimes &nbsp;|&nbsp; 4 = Strong/Often &nbsp;|&nbsp; 5 = Very Strong/Always &nbsp;|&nbsp; N/A = Not applicable</div>
+  <div class="q-block" data-code="F3.1">
+    <p class="q-label"><span class="q-code-inline">F3.1</span>The mining supply chain can sustain essential operations during major disruptions without complete systemic breakdown. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F3.1" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F3.1" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F3.1" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F3.1" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F3.1" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F3.1" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="q-block" data-code="F3.2">
+    <p class="q-label"><span class="q-code-inline">F3.2</span>Local mineral value-addition capacity is developing to reduce dependence on raw ore exports. <span class="req">*</span></p>
+    <div class="rating-row"><div class="r-col"><div class="r-col-label">None /<br>Never</div><label class="r-opt"><input type="radio" name="F3.2" value="1"><span class="r-circle">1</span></label></div><div class="r-col"><div class="r-col-label">Weak /<br>Rarely</div><label class="r-opt"><input type="radio" name="F3.2" value="2"><span class="r-circle">2</span></label></div><div class="r-col"><div class="r-col-label">Moderate /<br>Sometimes</div><label class="r-opt"><input type="radio" name="F3.2" value="3"><span class="r-circle">3</span></label></div><div class="r-col"><div class="r-col-label">Strong /<br>Often</div><label class="r-opt"><input type="radio" name="F3.2" value="4"><span class="r-circle">4</span></label></div><div class="r-col"><div class="r-col-label">Very Strong /<br>Always</div><label class="r-opt"><input type="radio" name="F3.2" value="5"><span class="r-circle">5</span></label></div><div class="r-col" style="margin-left:8px"><div class="r-col-label">Not<br>Applicable</div><label class="r-opt na-opt"><input type="radio" name="F3.2" value="na"><span class="r-circle na">N/A</span></label></div></div>
+    <div class="err-msg">Please select a rating.</div>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_F3_System_Self-Renewal_and_Resilience">Comments on F3. System Self-Renewal and Resilience (optional)</label>
+    <textarea id="cmt_F3_System_Self-Renewal_and_Resilience" name="cmt_F3_System_Self-Renewal_and_Resilience" placeholder="Any additional context or observations..."></textarea>
+  </div>
+</div>
+
+
+<div class="sec-header">
+  <h2>Section G — Strategic Risk Assessment</h2>
+  <p>This section asks you to rate the overall severity and manageability of each strategic risk category for Zimbabwe's mining supply chains across the corridors. Rate <strong>Impact</strong> (severity if materialised), <strong>Probability</strong> (likelihood in the next 3 years), and <strong>Controls</strong> (effectiveness of existing mitigations).</p>
+</div>
+<div class="card">
+  <div class="scale-legend">
+    <span><span class="leg-dot" style="background:#C00000"></span><strong>Impact &amp; Controls:</strong> 1 = None &nbsp;2 = Weak &nbsp;3 = Moderate &nbsp;4 = Strong &nbsp;5 = Very Strong</span>
+    <span><span class="leg-dot" style="background:#BF8F00"></span><strong>Probability:</strong> 1 = Never &nbsp;2 = Rarely &nbsp;3 = Sometimes &nbsp;4 = Often &nbsp;5 = Always</span>
+    <span><strong>Trend:</strong> ↑ Worsening &nbsp;→ Stable &nbsp;↓ Improving</span>
+  </div>
+  <div class="risk-table-wrap">
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th style="width:28px">#</th>
+          <th class="risk-col">Risk Category</th>
+          <th class="risk-col-head" style="min-width:160px">Impact<br><span style="font-weight:400;font-size:10px">(1–5)</span></th>
+          <th class="risk-col-head" style="min-width:160px">Probability<br><span style="font-weight:400;font-size:10px">(1–5)</span></th>
+          <th class="risk-col-head" style="min-width:160px">Controls<br><span style="font-weight:400;font-size:10px">(1–5)</span></th>
+          <th class="risk-col-head" style="min-width:70px">Trend<br><span style="font-weight:400;font-size:10px">↑ → ↓</span></th>
+          <th class="risk-col-head" style="min-width:120px">Recommended Action<br><span style="font-weight:400;font-size:10px">(optional)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="risk-num">1</td>
+          <td class="risk-name">ESG + Sustainability + Tailings</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r1" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r1" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r1" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r1" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r1" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r1" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r1" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r1" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r1" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r1" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r1" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r1" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r1" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r1" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r1" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r1">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r1" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">2</td>
+          <td class="risk-name">Skills / Workforce (Technical Mining Skills)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r2" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r2" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r2" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r2" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r2" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r2" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r2" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r2" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r2" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r2" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r2" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r2" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r2" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r2" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r2" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r2">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r2" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">3</td>
+          <td class="risk-name">Operations Complexity</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r3" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r3" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r3" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r3" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r3" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r3" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r3" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r3" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r3" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r3" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r3" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r3" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r3" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r3" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r3" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r3">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r3" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">4</td>
+          <td class="risk-name">Climate Change & Water Scarcity</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r4" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r4" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r4" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r4" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r4" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r4" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r4" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r4" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r4" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r4" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r4" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r4" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r4" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r4" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r4" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r4">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r4" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">5</td>
+          <td class="risk-name">Infrastructure — Energy (Power Supply)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r5" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r5" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r5" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r5" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r5" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r5" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r5" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r5" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r5" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r5" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r5" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r5" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r5" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r5" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r5" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r5">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r5" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">6</td>
+          <td class="risk-name">Digital & Technology (AI, IoT, Cyber)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r6" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r6" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r6" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r6" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r6" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r6" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r6" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r6" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r6" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r6" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r6" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r6" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r6" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r6" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r6" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r6">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r6" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">7</td>
+          <td class="risk-name">License to Operate / Community &amp; Social Risk</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r7" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r7" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r7" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r7" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r7" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r7" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r7" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r7" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r7" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r7" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r7" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r7" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r7" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r7" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r7" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r7">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r7" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">8</td>
+          <td class="risk-name">Infrastructure — Transportation &amp; Logistics</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r8" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r8" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r8" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r8" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r8" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r8" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r8" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r8" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r8" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r8" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r8" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r8" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r8" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r8" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r8" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r8">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r8" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">9</td>
+          <td class="risk-name">Capital — Declining Investment &amp; Finance</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r9" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r9" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r9" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r9" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r9" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r9" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r9" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r9" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r9" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r9" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r9" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r9" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r9" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r9" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r9" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r9">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r9" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">10</td>
+          <td class="risk-name">Geopolitical Risk (Export Routes, Sanctions)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r10" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r10" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r10" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r10" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r10" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r10" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r10" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r10" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r10" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r10" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r10" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r10" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r10" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r10" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r10" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r10">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r10" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">11</td>
+          <td class="risk-name">Concentration Risk (Commodity / Market / Route)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r11" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r11" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r11" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r11" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r11" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r11" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r11" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r11" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r11" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r11" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r11" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r11" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r11" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r11" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r11" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r11">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r11" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">12</td>
+          <td class="risk-name">Regulatory Fragmentation / Policy Uncertainty</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r12" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r12" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r12" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r12" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r12" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r12" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r12" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r12" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r12" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r12" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r12" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r12" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r12" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r12" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r12" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r12">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r12" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">13</td>
+          <td class="risk-name">Political Risk (Indigenisation, Nationalisation, Instability)</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r13" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r13" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r13" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r13" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r13" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r13" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r13" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r13" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r13" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r13" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r13" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r13" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r13" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r13" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r13" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r13">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r13" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">14</td>
+          <td class="risk-name">Commodity Prices / Economic Downturn</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r14" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r14" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r14" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r14" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r14" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r14" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r14" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r14" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r14" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r14" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r14" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r14" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r14" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r14" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r14" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r14">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r14" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+        <tr>
+          <td class="risk-num">15</td>
+          <td class="risk-name">Illegal Mining Risk</td>
+          <td><div class="mini-rating"><label class="mini-r impact-sel"><input type="radio" name="G_imp_r15" value="1"><span class="mini-circle">1</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r15" value="2"><span class="mini-circle">2</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r15" value="3"><span class="mini-circle">3</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r15" value="4"><span class="mini-circle">4</span></label><label class="mini-r impact-sel"><input type="radio" name="G_imp_r15" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r prob-sel"><input type="radio" name="G_prob_r15" value="1"><span class="mini-circle">1</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r15" value="2"><span class="mini-circle">2</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r15" value="3"><span class="mini-circle">3</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r15" value="4"><span class="mini-circle">4</span></label><label class="mini-r prob-sel"><input type="radio" name="G_prob_r15" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td><div class="mini-rating"><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r15" value="1"><span class="mini-circle">1</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r15" value="2"><span class="mini-circle">2</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r15" value="3"><span class="mini-circle">3</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r15" value="4"><span class="mini-circle">4</span></label><label class="mini-r ctrl-sel"><input type="radio" name="G_ctrl_r15" value="5"><span class="mini-circle">5</span></label></div></td>
+          <td style="text-align:center">
+            <select class="trend-sel" name="G_trend_r15">
+              <option value="">—</option>
+              <option value="up">↑</option>
+              <option value="stable">→</option>
+              <option value="down">↓</option>
+            </select>
+          </td>
+          <td><input type="text" class="action-input" name="G_action_r15" placeholder="e.g. Develop mitigation plan..."></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="comment-block">
+    <label for="cmt_secG">Overall comments on strategic risks (optional)</label>
+    <textarea id="cmt_secG" name="cmt_secG" placeholder="Any additional observations on the strategic risk landscape..."></textarea>
+  </div>
+</div>
+
+<div class="sec-header">
+  <h2>Questionnaire Feedback</h2>
+  <p>Please share your thoughts on this pilot questionnaire to help us improve it.</p>
+</div>
+<div class="card">
+  <div class="card-pad">
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">How clear and understandable did you find the questions overall? <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="fb_clarity" value="Very clear"> Very clear</label>
+      <label class="radio-opt"><input type="radio" name="fb_clarity" value="Mostly clear"> Mostly clear</label>
+      <label class="radio-opt"><input type="radio" name="fb_clarity" value="Somewhat unclear"> Somewhat unclear</label>
+      <label class="radio-opt"><input type="radio" name="fb_clarity" value="Very unclear"> Very unclear</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">How relevant are these questions to the realities you experience in the mining supply chain? <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="fb_relevance" value="Highly relevant"> Highly relevant</label>
+      <label class="radio-opt"><input type="radio" name="fb_relevance" value="Mostly relevant"> Mostly relevant</label>
+      <label class="radio-opt"><input type="radio" name="fb_relevance" value="Somewhat relevant"> Somewhat relevant</label>
+      <label class="radio-opt"><input type="radio" name="fb_relevance" value="Not very relevant"> Not very relevant</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">How long did this questionnaire take you to complete? <span class="req">*</span></span>
+      <label class="radio-opt"><input type="radio" name="fb_time" value="Less than 10 minutes"> Less than 10 minutes</label>
+      <label class="radio-opt"><input type="radio" name="fb_time" value="10–15 minutes"> 10–15 minutes</label>
+      <label class="radio-opt"><input type="radio" name="fb_time" value="15–20 minutes"> 15–20 minutes</label>
+      <label class="radio-opt"><input type="radio" name="fb_time" value="20–30 minutes"> 20–30 minutes</label>
+      <label class="radio-opt"><input type="radio" name="fb_time" value="More than 30 minutes"> More than 30 minutes</label>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">Were there any questions you found confusing, sensitive, or inappropriate?</span>
+      <textarea name="fb_confusing" placeholder="Please list question codes and explain any concerns (e.g. B1.3 — unclear terminology)..." style="width:100%;border:none;border-bottom:1px solid #dadce0;padding:6px 0;font-size:14px;font-family:inherit;resize:none;min-height:64px;background:transparent;outline:none"></textarea>
+    </div>
+
+    <div style="margin-bottom:22px">
+      <span class="field-label">Are there important supply chain risk topics that are missing from this questionnaire?</span>
+      <textarea name="fb_missing" placeholder="Describe any gaps or topics you feel should be included..." style="width:100%;border:none;border-bottom:1px solid #dadce0;padding:6px 0;font-size:14px;font-family:inherit;resize:none;min-height:64px;background:transparent;outline:none"></textarea>
+    </div>
+
+    <div>
+      <span class="field-label">Any other feedback or suggestions for improving this questionnaire?</span>
+      <textarea name="fb_other" placeholder="Your thoughts are greatly appreciated..." style="width:100%;border:none;border-bottom:1px solid #dadce0;padding:6px 0;font-size:14px;font-family:inherit;resize:none;min-height:64px;background:transparent;outline:none"></textarea>
+    </div>
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-pad">
+    <div id="prog-label" style="font-size:13px;color:#5f6368;margin-bottom:14px">0 of 53 questions answered</div>
+    <div class="submit-row">
+      <button type="submit" class="btn-submit">Submit</button>
+      <button type="button" class="btn-clear" onclick="clearAll()">Clear form</button>
+    </div>
+  </div>
+</div>
+</form>
+
+<!-- THANK YOU -->
+<div id="thankyou">
+  <div class="ty-card">
+    <div class="ty-icon">&#10003;</div>
+    <h2>Your response has been submitted</h2>
+    <p>Thank you for taking part in this pilot questionnaire.<br>Your input will directly inform the development of a mining supply chain risk management framework.<br><br>
+    If you have questions about this research, please contact the principal investigator.</p>
+  </div>
+</div>
+
+<script>
+
+function updateProgress(total) {
+  const qs = document.querySelectorAll('.q-block');
+  let answered = 0;
+  qs.forEach(b => {
+    const code = b.dataset.code;
+    if (code && document.querySelector(`input[name="${code}"]:checked`)) answered++;
+  });
+  const el = document.getElementById('prog-label');
+  if (el) el.textContent = answered + ' of ' + total + ' questions answered';
+}
+
+function validateAndSubmit(e, total) {
+  e.preventDefault();
+  const blocks = document.querySelectorAll('.q-block[data-code]');
+  let valid = true, firstErr = null;
+  blocks.forEach(b => {
+    const code = b.dataset.code;
+    if (!document.querySelector(`input[name="${code}"]:checked`)) {
+      b.classList.add('error'); valid = false;
+      if (!firstErr) firstErr = b;
+    } else { b.classList.remove('error'); }
+  });
+  if (!valid) { firstErr.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('thankyou').style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function clearAll() {
+  if (confirm('Clear all responses?')) {
+    document.getElementById('form').reset();
+    document.querySelectorAll('.q-block').forEach(b=>b.classList.remove('error'));
+  }
+}
+
+document.getElementById('form').addEventListener('change', () => updateProgress(53));
+document.getElementById('form').addEventListener('submit', (e) => validateAndSubmit(e, 53));
+</script>
+</div>
+</body>
+</html>
