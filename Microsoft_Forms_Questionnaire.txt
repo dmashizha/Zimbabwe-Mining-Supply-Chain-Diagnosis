@@ -1,0 +1,1314 @@
+================================================================
+ZIMBABWE MINING SUPPLY CHAIN RISK ASSESSMENT
+Microsoft Forms — Ready-to-Copy Questionnaire
+================================================================
+
+HOW TO USE THIS DOCUMENT IN MICROSOFT FORMS
+--------------------------------------------
+1. Go to forms.microsoft.com and click New Form
+2. Set the form title and description from the FORM TITLE section below
+3. For each question block, click + Add new question and choose the
+   question type shown in brackets e.g. [CHOICE], [RATING], [TEXT]
+4. Copy the question text exactly as written
+5. For [CHOICE] questions, add each option on a separate line
+6. For [RATING] questions, set scale to 1-5 and label the endpoints
+7. For [TEXT] questions, set to Long answer
+8. Section headers: use the Section button to group questions
+
+NOTE ON SECTION G (RISK MATRIX):
+Microsoft Forms does not support a grid/matrix natively.
+Each risk row is entered as its own set of 3 rating questions
+(Impact, Probability, Controls) plus one Choice question for Trend
+and one Text question for Recommended Action.
+A shortcut option is also provided at the end of this document.
+
+================================================================
+FORM TITLE AND DESCRIPTION
+================================================================
+
+TITLE:
+Zimbabwe Minerals Supply Chain Risk Assessment — Pilot Survey
+
+DESCRIPTION:
+This questionnaire explores supply chain risk conditions across
+Zimbabwe's mineral export corridors. Your responses are anonymous
+and used solely for academic research. Please answer each question
+as honestly and accurately as possible based on your direct
+experience and knowledge.
+
+Rating scale used throughout:
+1 = None / Never
+2 = Weak / Rarely
+3 = Moderate / Sometimes
+4 = Strong / Often
+5 = Very Strong / Always
+N/A = Not applicable to your role or organisation
+
+Estimated completion time: 15–20 minutes.
+
+================================================================
+SECTION A — RESPONDENT PROFILE
+================================================================
+[Add a Section in Microsoft Forms titled: Section A — Respondent Profile]
+[Section description: Complete before proceeding to the questionnaire sections.]
+
+----------------------------------------------------------------
+QUESTION A1
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+Select the stakeholder group that best fits your primary role.
+
+Options (one per line):
+Government official — ministry, national or regulatory body
+Government official — parastatal or state-owned enterprise
+Mining company — large scale (annual turnover > USD 10 million)
+Mining company — small scale or artisanal
+Logistics or freight operator
+Civil society or community organisation
+International buyer, commodity trader or refinery
+Academic or research institution
+Other (please specify)
+
+[Tip: Enable "Other" option in Microsoft Forms choice settings]
+
+----------------------------------------------------------------
+QUESTION A2
+[CHOICE — Multiple answers allowed — Required]
+----------------------------------------------------------------
+Question text:
+Which mineral sector(s) does your work involve? (Select all that apply)
+
+Options (one per line):
+Lithium
+Platinum Group Metals
+Chrome
+Multiple minerals
+I work across the corridor generally (logistics, policy, etc.)
+Other (please specify)
+
+[Tip: Enable "Multiple answers" and "Other" in settings]
+
+----------------------------------------------------------------
+QUESTION A3
+[CHOICE — Multiple answers allowed — Required]
+----------------------------------------------------------------
+Question text:
+Which export corridor(s) does your work primarily involve?
+
+Options (one per line):
+Beira Corridor (Zimbabwe – Mozambique – Port of Beira)
+Durban/Richards Bay Corridor (Zimbabwe – South Africa)
+Maputo Corridor (Zimbabwe – Mozambique – Port of Maputo)
+Domestic corridors (internal mine to market)
+Other corridors (please specify)
+Neither — my work is primarily mine/processing site focused
+I am not sure
+
+[Tip: Enable "Multiple answers" in settings]
+
+----------------------------------------------------------------
+QUESTION A4
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+How many years of experience do you have working in Zimbabwe's
+minerals supply chain?
+
+Options (one per line):
+Less than 2 years
+2 to 5 years
+6 to 10 years
+11 to 20 years
+More than 20 years
+
+----------------------------------------------------------------
+QUESTION A5
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+At what geographic level does your organisation primarily operate?
+
+Options (one per line):
+Mine site / operational level
+Provincial level
+National level
+Regional (SADC) level
+International level
+Multiple levels
+
+================================================================
+SECTION B — VSM SYSTEM 1: OPERATIONS
+================================================================
+[Add a Section titled: Section B — VSM System 1: Operations]
+[Section description: Rate the degree to which the following
+conditions apply to mining supply chain operations in your
+corridor. Use the scale: 1 = None/Never to 5 = Very Strong/Always]
+
+--- B1. Operational Capacity and Stability ---
+
+----------------------------------------------------------------
+QUESTION B1.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.1 — Mining extraction operations in your corridor maintain
+consistent output volumes despite operations-related failures.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+[Add an "N/A" option: enable "Not applicable" or add as extra choice]
+
+----------------------------------------------------------------
+QUESTION B1.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.2 — Processing inefficiencies are effectively controlled
+within acceptable industry benchmarks.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B1.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.3 — Mine operations inputs supply chains are reliable and do
+not cause significant operational stoppages.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B1.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.4 — Energy supply is reliable to maintain uninterrupted
+operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B1.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.5 — Transport infrastructure along your corridor supports
+timely and cost-effective mineral product movement.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B1.6
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B1.6 — Your organisation can respond to sudden operational
+disruptions within an acceptable timeframe.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B1 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on operational conditions, specific bottlenecks, or
+resilience strengths in your corridor (optional):
+
+--- B2. Workforce and Technical Skills ---
+
+----------------------------------------------------------------
+QUESTION B2.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B2.1 — The mining workforce in your corridor has adequate
+technical skills for current production requirements.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B2.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B2.2 — Labour-related issues do not significantly undermine
+operational continuity.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B2.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B2.3 — Workforce diversity is meaningfully equitable in mining
+operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B2.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B2.4 — Training and capacity-building programmes adequately
+address emerging skill gaps (e.g., digital mining, automation,
+metallurgical engineering, safety systems).
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B2 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on workforce availability, skills gaps, or training
+programmes (optional):
+
+--- B3. ESG, Environmental Compliance, and Community Relations ---
+
+----------------------------------------------------------------
+QUESTION B3.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B3.1 — Mining operations comply with environmental standards.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B3.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B3.2 — Community relations (social licence to operate) are
+actively managed and do not pose risk to operational continuity.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B3.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+B3.3 — Tailings storage facilities (TSFs) meet international
+safety standards (e.g., Global Industry Standard on Tailings
+Management, GISTM).
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION B3 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on ESG compliance, tailings management, or community
+relations (optional):
+
+================================================================
+SECTION C — VSM SYSTEM 2: COORDINATION
+================================================================
+[Add a Section titled: Section C — VSM System 2: Coordination]
+[Section description: Rate the effectiveness of coordination
+mechanisms across your mining corridor.]
+
+--- C1. Information and Market Coordination ---
+
+----------------------------------------------------------------
+QUESTION C1.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C1.1 — Reliable, timely commodity price information is accessible
+to mining stakeholders across the corridor.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C1.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C1.2 — Information infrastructure is used to effectively
+coordinate supply chain metrics between mining supply chain actors.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C1.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C1.3 — Production scheduling and logistics are effectively
+synchronised across mining supply chain actors.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C1.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C1.4 — Cross-border coordination mechanisms function effectively
+to reduce export delays and losses.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C1 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on coordination mechanisms, information systems, or
+cross-border challenges (optional):
+
+--- C2. Digital Technology and Cyber Risk ---
+
+----------------------------------------------------------------
+QUESTION C2.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C2.1 — Digital traceability tools (e.g., blockchain, ERP, mobile
+platforms) are in use and effective in your corridor.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C2.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C2.2 — Your organisation has cybersecurity protocols in place to
+protect the digital mining supply chain ecosystem.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C2.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C2.3 — Data science tools are being adopted to improve supply
+chain decision-making.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C2 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on digital tools, cyber risks, or connectivity
+challenges (optional):
+
+--- C3. Regulatory and Standards Coordination ---
+
+----------------------------------------------------------------
+QUESTION C3.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C3.1 — Regulatory requirements do not create unpredictable
+compliance burdens.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C3.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C3.2 — Regulatory authorities do not create conflicting
+requirements that disrupt supply chain coordination.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C3.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+C3.3 — Customs processes at key corridor points are efficient
+and predictable for mineral exports.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION C3 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on regulatory coherence, border management, or industry
+coordination (optional):
+
+================================================================
+SECTION D — VSM SYSTEM 3: CONTROL
+================================================================
+[Add a Section titled: Section D — VSM System 3: Control
+(Resource Allocation and Performance)]
+[Section description: Rate the effectiveness of control and
+performance management systems in your corridor.]
+
+--- D1. Capital, Finance, and Investment ---
+
+----------------------------------------------------------------
+QUESTION D1.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D1.1 — Access to affordable finance is adequate for mining
+supply chain actors to operate at full capacity.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D1.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D1.2 — Foreign direct investment into your mining corridor is
+perceived as sufficiently secure.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D1.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D1.3 — Risk-transfer mechanisms (e.g., insurance, hedging) are
+accessible and adequately priced.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D1.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D1.4 — Foreign currency risk does not significantly impair
+mining supply chain operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D1.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D1.5 — Resource nationalism requirements are implemented in a
+manner that maintains operational continuity.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D1 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on investment climate, finance access, or capital
+constraints (optional):
+
+--- D2. Performance Monitoring and Internal Control ---
+
+----------------------------------------------------------------
+QUESTION D2.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.1 — Your organisation uses formal KPIs to monitor mining
+supply chain performance across operational units.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.2 — Internal audit and compliance functions effectively
+identify and address performance deviations in mining supply
+chain operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.3 — Vendor accountability is regularly assessed to address
+under-performance in a structured manner.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.4 — Mining supply chain risk management frameworks are
+formally maintained.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.5 — Concentration risk (over-reliance on a single buyer,
+smelter/refinery, port, or export route) is actively monitored
+and mitigated.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2.6
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D2.6 — ESG performance metrics are formally tracked and publicly
+reported.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D2 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on performance monitoring systems, audit mechanisms, or
+concentration risks (optional):
+
+--- D3. Early Warning and Alert Systems ---
+
+----------------------------------------------------------------
+QUESTION D3.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D3.1 — Early warning systems exist that alert leadership to
+imminent mining supply chain disruptions.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D3.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D3.2 — Rapid response protocols are activated quickly when
+crisis thresholds are crossed, without waiting for routine
+reporting cycles.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D3.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+D3.3 — Market intelligence on volatility is rapidly transmitted
+to relevant actors to enable protective action.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION D3 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on early warning systems, rapid response capacity, or
+signal failures (optional):
+
+================================================================
+SECTION E — VSM SYSTEM 4: INTELLIGENCE
+================================================================
+[Add a Section titled: Section E — VSM System 4: Intelligence
+(Adaptation and Futures)]
+[Section description: Rate how effectively your organisation
+scans and acts on external environmental intelligence.]
+
+--- E1. Climate, Environmental, and Water Intelligence ---
+
+----------------------------------------------------------------
+QUESTION E1.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E1.1 — Climate adaptation strategies are embedded in long-term
+mining supply chain planning.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E1.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E1.2 — Carbon footprint reduction and net-zero transition
+pathways are being actively developed for mining operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E1 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on climate monitoring, adaptation planning, or
+environmental risks (optional):
+
+--- E2. Commodity Market and Energy Transition Intelligence ---
+
+----------------------------------------------------------------
+QUESTION E2.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E2.1 — Global critical mineral demand trends are systematically
+factored into supply chain strategy.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E2.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E2.2 — Your organisation monitors developments in buyer markets
+(China, EU, USA, India, etc.) that could affect product market
+requirements.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E2.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E2.3 — Alternative export routes are developed, informed by
+risk assessments of corridor dependency on transit countries.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E2.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E2.4 — Strategic planning incorporates risk assessments of the
+African Continental Free Trade Area (AfCFTA) initiatives.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E2.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E2.5 — Demand-side disruptions from the energy transition are
+modelled in strategic scenarios.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E2 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on commodity market intelligence, energy transition
+risks, or AfCFTA readiness (optional):
+
+--- E3. Geopolitical and Trade Intelligence ---
+
+----------------------------------------------------------------
+QUESTION E3.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E3.1 — Geopolitical risks are actively monitored through the
+mining supply chains.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E3.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E3.2 — Your organisation monitors the risk of trade restrictions
+on Zimbabwean minerals in key destination markets.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E3.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E3.3 — Risks from illegal mining are assessed in strategic
+planning.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E3.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E3.4 — The impact of changes in global responsible sourcing
+requirements on Zimbabwe's mineral export access is actively
+monitored.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E3 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on geopolitical monitoring, trade intelligence, or
+responsible sourcing risks (optional):
+
+--- E4. Technological Adoption, R&D, and Innovation Scanning ---
+
+----------------------------------------------------------------
+QUESTION E4.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E4.1 — Your organisation actively carries out feasibility studies
+of frontier mining technologies for supply chain improvement.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E4.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E4.2 — Risks from digital disruption are assessed in strategic
+planning.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E4.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E4.3 — Your corridor mining supply chain has a formal innovation
+pipeline (R&D function) that translates technology intelligence
+into operational improvements.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E4 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on innovation scanning, technology adoption, or R&D
+capacity (optional):
+
+--- E5. Policy and Regulatory Intelligence ---
+
+----------------------------------------------------------------
+QUESTION E5.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+E5.1 — Your organisation proactively monitors regulatory and
+policy changes affecting operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION E5 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on policy monitoring, regulatory risks, or advocacy
+engagement (optional):
+
+================================================================
+SECTION F — VSM SYSTEM 5: POLICY, GOVERNANCE AND DIRECTION
+================================================================
+[Add a Section titled: Section F — VSM System 5: Policy
+(Identity, Governance and Direction)]
+[Section description: Rate the coherence and effectiveness of
+strategic governance across Zimbabwe's mining supply chain.]
+
+--- F1. Governance and Political Risk ---
+
+----------------------------------------------------------------
+QUESTION F1.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.1 — National mining policy in Zimbabwe provides a coherent
+enabling framework for supply chain operations.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.2 — Political risk does not materially undermine investor
+confidence in the corridor.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.3 — National data sovereignty of strategic mining supply
+chain intelligence is maintained by Zimbabwe.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.4 — Parastatal/state-owned enterprise roles in mining are
+clearly defined so as not to crowd out private sector
+participation.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.5 — Beneficial ownership transparency frameworks in the
+mining sector are effectively enforced.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1.6
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F1.6 — Anti-corruption frameworks in the mining sector are
+effectively enforced.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F1 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on governance structures, political risk, or parastatal
+performance (optional):
+
+--- F2. Strategic Vision and Systemic Coherence ---
+
+----------------------------------------------------------------
+QUESTION F2.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.1 — A shared long-term value-addition vision for Zimbabwe's
+mining supply chains is endorsed across sector stakeholders.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.2 — The mining supply chain has clear strategic priorities
+that balance economic growth, environmental sustainability, and
+social equity.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.3 — Zimbabwe's mining supply chain governance is sufficiently
+autonomous to make strategic decisions without excessive
+dependence on external mandates.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.4 — Inter-ministerial coordination for Zimbabwe's mining
+supply chains produces coherent corridor policy.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2.5
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.5 — Zimbabwe's value-addition strategy is coherent.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2.6
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F2.6 — Zimbabwe's value-addition strategy is supported by
+adequate infrastructure.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F2 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on strategic vision, inter-ministerial coordination, or
+beneficiation policy (optional):
+
+--- F3. System Self-Renewal and Resilience ---
+
+----------------------------------------------------------------
+QUESTION F3.1
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F3.1 — The mining supply chain can sustain essential operations
+during major disruptions without complete systemic breakdown.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F3.2
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F3.2 — Local mineral value-addition capacity is developing to
+reduce dependence on raw ore exports.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F3.3
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F3.3 — Mining supply chain management capacity is being built
+domestically to reduce dependence on foreign expertise.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F3.4
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+F3.4 — Zimbabwe's mining corridors have demonstrated they are
+structurally more resilient than a decade ago.
+
+[Set left label: None / Never]
+[Set right label: Very Strong / Always]
+
+----------------------------------------------------------------
+QUESTION F3 — COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Comments on systemic resilience, self-renewal capacity, or
+structural vulnerabilities (optional):
+
+================================================================
+SECTION G — STRATEGIC RISK ASSESSMENT
+================================================================
+[Add a Section titled: Section G — Strategic Risk Assessment]
+[Section description: Rate the overall severity and
+manageability of each strategic risk category for Zimbabwe's
+mining supply chains. Rate IMPACT (severity if materialised),
+PROBABILITY (likelihood in the next 3 years), and CONTROLS
+(effectiveness of existing mitigations).
+Scale: 1 = None/Weak ... 5 = Very High/Very Effective]
+
+NOTE FOR MICROSOFT FORMS SETUP:
+Enter each risk as a group of 5 questions (Impact, Probability,
+Controls, Trend, Action). Use the sub-section label pattern
+shown below. Copy the 5-question block and change the risk
+name for each of the 15 risks.
+
+RISK LIST (use this name in each question block below):
+  1.  ESG + Sustainability + Tailings
+  2.  Skills / Workforce (Technical Mining Skills)
+  3.  Operations Complexity
+  4.  Climate Change and Water Scarcity
+  5.  Infrastructure — Energy (Power Supply)
+  6.  Digital and Technology (AI, IoT, Cyber)
+  7.  Licence to Operate / Community and Social Risk
+  8.  Infrastructure — Transportation and Logistics
+  9.  Capital — Declining Investment and Finance
+  10. Geopolitical Risk (Export Routes, Sanctions)
+  11. Concentration Risk (Commodity / Market / Route)
+  12. Regulatory Fragmentation / Policy Uncertainty
+  13. Political Risk (Indigenisation, Nationalisation,
+      Instability)
+  14. Commodity Prices / Economic Downturn
+  15. Illegal Mining Risk
+
+--- REPEAT THIS BLOCK FOR EACH OF THE 15 RISKS ---
+[Replace [RISK NAME] with the risk name from the list above]
+
+----------------------------------------------------------------
+QUESTION G[N].1 — IMPACT
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+G[N] [RISK NAME] — Impact
+How severe would the impact be if this risk materialised?
+
+[Set left label: None / No impact]
+[Set right label: Very Severe]
+
+----------------------------------------------------------------
+QUESTION G[N].2 — PROBABILITY
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+G[N] [RISK NAME] — Probability
+How likely is this risk to materialise in the next 3 years?
+
+[Set left label: Never / Very Unlikely]
+[Set right label: Very Likely / Always]
+
+----------------------------------------------------------------
+QUESTION G[N].3 — CONTROLS
+[RATING — Scale 1 to 5 — Required]
+----------------------------------------------------------------
+Question text:
+G[N] [RISK NAME] — Controls
+How effective are existing mitigation measures for this risk?
+
+[Set left label: No controls in place]
+[Set right label: Very Effective controls]
+
+----------------------------------------------------------------
+QUESTION G[N].4 — TREND
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+G[N] [RISK NAME] — Trend
+Is this risk getting better or worse?
+
+Options (one per line):
+Worsening
+Stable
+Improving
+Not sure
+
+----------------------------------------------------------------
+QUESTION G[N].5 — RECOMMENDED ACTION
+[TEXT — Short answer — Optional]
+----------------------------------------------------------------
+Question text:
+G[N] [RISK NAME] — Recommended Action (optional)
+What action would you recommend to address this risk?
+
+--- END OF REPEATED BLOCK ---
+
+----------------------------------------------------------------
+QUESTION G — OVERALL COMMENTS
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Overall comments on the strategic risk landscape (optional):
+
+================================================================
+SECTION H — QUESTIONNAIRE FEEDBACK
+================================================================
+[Add a Section titled: Section H — Questionnaire Feedback]
+[Section description: Please share your thoughts on this pilot
+questionnaire to help us improve it.]
+
+----------------------------------------------------------------
+QUESTION H1
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+How clear and understandable did you find the questions overall?
+
+Options (one per line):
+Very clear
+Mostly clear
+Somewhat unclear
+Very unclear
+
+----------------------------------------------------------------
+QUESTION H2
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+How relevant are these questions to the realities you experience
+in the mining supply chain?
+
+Options (one per line):
+Highly relevant
+Mostly relevant
+Somewhat relevant
+Not very relevant
+
+----------------------------------------------------------------
+QUESTION H3
+[CHOICE — Single answer — Required]
+----------------------------------------------------------------
+Question text:
+How long did this questionnaire take you to complete?
+
+Options (one per line):
+Less than 10 minutes
+10 to 15 minutes
+15 to 20 minutes
+20 to 30 minutes
+More than 30 minutes
+
+----------------------------------------------------------------
+QUESTION H4
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Were there any questions you found confusing, sensitive, or
+inappropriate? If yes, please list the question code and explain
+(e.g. B1.3 — unclear terminology):
+
+----------------------------------------------------------------
+QUESTION H5
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Are there important supply chain risk topics that are missing
+from this questionnaire?
+
+----------------------------------------------------------------
+QUESTION H6
+[TEXT — Long answer — Optional]
+----------------------------------------------------------------
+Question text:
+Any other feedback or suggestions for improving this
+questionnaire?
+
+================================================================
+END OF QUESTIONNAIRE
+================================================================
+
+QUICK REFERENCE — QUESTION COUNT SUMMARY
+-----------------------------------------
+Section A  (Profile)           5 questions
+Section B  (Operations)       13 questions + 3 comment boxes
+Section C  (Coordination)     10 questions + 3 comment boxes
+Section D  (Control)          14 questions + 3 comment boxes
+Section E  (Intelligence)     13 questions + 5 comment boxes
+Section F  (Policy)           16 questions + 3 comment boxes
+Section G  (Risk Matrix)      75 questions + 1 comment box
+           (15 risks x 5 questions each)
+Section H  (Feedback)          6 questions
+-----------------------------------------
+TOTAL RATED QUESTIONS:        56 (Sections B-F + E5.1)
+TOTAL RISK MATRIX QUESTIONS:  75 (Section G)
+TOTAL FORM QUESTIONS:        ~137 including comments and feedback
+
+MICROSOFT FORMS TIPS
+--------------------
+- Use "Rating" question type for all 1-5 scale questions
+- Set scale labels in the Rating question settings
+- Use "Section" to group questions by VSM system
+- For N/A: either add as a 6th option in Choice format,
+  OR add a follow-up question "Did N/A apply?" after
+  each sub-section
+- Responses export directly to Excel via
+  Forms > Responses > Open in Excel
+- Share link: Forms > Share > Copy link
+
+================================================================
